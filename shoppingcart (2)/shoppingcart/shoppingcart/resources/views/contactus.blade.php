@@ -46,7 +46,7 @@
 							<div class="border-1">
 								<div class="border-2">
 									<p>Contact Us</p>
-									<p>Contact Uscnjbn</p>
+									
 								</div>
 								<div class="requir-info">
 									<span>*Required information</span>
