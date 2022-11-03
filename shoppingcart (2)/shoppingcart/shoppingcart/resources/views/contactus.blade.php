@@ -46,6 +46,7 @@
 							<div class="border-1">
 								<div class="border-2">
 									<p>Contact Us</p>
+									<p>Contact Uscnjbn</p>
 								</div>
 								<div class="requir-info">
 									<span>*Required information</span>
@@ -72,7 +73,7 @@
 												</tr>
 											</table>
 											<div class="snd-btn">											
-												{{-- <input type="submit" name="submit" value="send now"> --}}
+											
 											</div>
 										</form>
 									</div>
