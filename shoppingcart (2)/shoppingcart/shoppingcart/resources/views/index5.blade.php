@@ -31,7 +31,8 @@
 					</div>
 
 					@foreach($result as $res)
-				
+				 <form action="buycart{{$res->id}}" method="POST">
+					{{ csrf_field() }}
 					<div class="Camera-info">
 						<!-- <div class="cam-info"> -->
 							<div class="samsung-cam">
@@ -48,13 +49,14 @@
 										<!-- <i class="fa fa-shopping-cart" aria-hidden="true"></i> -->
 										<i class="fa fa-plus" aria-hidden="true"></i>
 										<i class="fa fa-cart-plus" aria-hidden="true"></i>
-										<input type="submit" name="" value="Add to cart">
+										<a href="buycart{{$res->id}}"><input type="submit" name="" value="Add to cart"></a>
 									</div>
 								</div>
 							</div>
 						
 						<!-- </div> -->
 					</div>
+				 </form>
 					@endforeach
 					
 					

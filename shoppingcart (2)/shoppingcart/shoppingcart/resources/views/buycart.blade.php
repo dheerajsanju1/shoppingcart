@@ -23,7 +23,7 @@
 					</div>
 				</div>
 				<div class="contact">
-					@foreach($sql as $s)
+					@foreach($run as $s)
 					<div class="contact-us">
 						<p>{{$s->productname}}</p>
 					</div>
@@ -49,13 +49,13 @@
 								<p>Manufacturer:{{$s->productname}}</p>
 							</div>
 							<div class="quantity">
-								<form action="" method="post">
+								<form action="{{url('add-cart')}}" method="post">
 									{{ csrf_field() }}
-									<input type="text" name="id" value="">
+									<input type="hidden" name="product_id" value="{{$s->id}}">
 									<table>
 										<tr>
 											<td class="qty">Enter quantity</td>
-											<td><input type="" name="qty"></td>
+											<td><input type="text" name="qty" required/></td>
 										</tr>
 									</table>
 							
@@ -64,11 +64,18 @@
 								</div>
 							</div>
 							<div class="cart">
+								@if (!empty(session('username')))
 								<input type="submit" name="submit" value="Add to Cart">
+								@else
+								<a href="signup"><input type="button" name="submit" value="first login to continue"></a>
+									
+								@endif
 							</div>
 						</form>
 							<div class="checkout">
-								<input type="button" name="" value="checkout">
+							<a href="{{url('chek')}}">	
+							<input type="button" name="" value="checkout">
+							</a>
 							</div>
 						</div>
 					</div>

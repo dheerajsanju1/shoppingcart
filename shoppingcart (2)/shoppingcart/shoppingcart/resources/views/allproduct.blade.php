@@ -23,12 +23,12 @@
 					</div>
 				</div>
 				<div class="contact">
-					@foreach($run as $r)
+					@foreach($result as $r)
 					<div class="contact-us">
 						<p>{{$r->productname}}</p>
 					</div>
 					<div class="product-info">
-						<span>Sort by:</span>
+						{{-- <span>Sort by:</span>
 						<form>
 							<select>
 								<option>product name</option>
@@ -36,10 +36,10 @@
 								<option>3</option>
 								<option>4</option>
 							</select>
-						</form>
+						</form> --}}
 					</div>
 					<div class="display-product">
-						<span>Displaying 1 to 5(of 6 new product)</span>
+						<span>( new product)</span>
 						<div class="btnnn">
 							<input  class="pre" type="submit" name="" value="Previous">
 							<input class="nxt" type="submit" name="" value="Next">
@@ -73,7 +73,7 @@
 								<span>Rs.{{$r->productprice}}</span>
 							</div>
 							<div class="checkout">
-								<a href="buycart{{$r->id}}"><input type="submit" name="" value="BUY NOW"></a>
+								<a href="buycar{{$r->id}}"><input type="submit" name="" value="BUY NOW"></a>
 							</div>
 						</div>
 					</div>

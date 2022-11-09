@@ -1,5 +1,3 @@
-{{-- @if(session()->has('user_session')) --}}
-
 
 <div class="head-div">
     <div class="main">
@@ -7,9 +5,12 @@
             <span>My shopping project</span>
             <p>THE BIGGEST CHOICE OF THE WEB</p>
         </div>
-        <div class="btn">
-            {{-- <a href=""><input type="button" name="" value="Log out"></a> --}}
-            <a style="color: aliceblue" href="{{url('logout-user')}}">logout</a>
+        <div class="btn">@if (!empty(session('username')))
+            <a style="color: aliceblue;text-decoration:none" href="{{url('logout-user')}}">{{session('username')}}   logout</a>
+            @else
+            <a style="color: aliceblue" href="signup"> login</a>
+            
+        @endif
         </div>
     </div>
 </div>
@@ -18,12 +19,11 @@
         <div class="list">
             <ul>
                 <a href="{{url('home-page')}}"><li>HOME</li></a>
-                <li>NEW PROJECT</li>
-                <li>SPECIAL</li>
-                <li>ALL PRODUCTS</li>
-                <li>REVIEWS</li>
+                <a href="newproducts"><li>NEW PRODUCTS</li></a>
+                <a href="special"><li>SPECIAL</li></a>
+                <a href="{{url('all-product')}}"><li>ALL PRODUCTS</li></a>
                 <a href="{{url('contact-head')}}"><li>CONTACT</li></a>
-                <li>FAQS</li>
+               
             </ul>
         </div>
         <div class="search">
@@ -38,6 +38,3 @@
         </div>
     </div>
 </div>
-{{-- @else 
-<script>window.location="{{url('/signup')}}"</script>
-@endif --}}
